@@ -35,38 +35,6 @@ First you need to include `chillin.js` (the one in `bin`) and call it before cal
     	});
     </script>
     
-### Chillin options
-
-The most interesting option that can be pass to chillin might be `layoutAlgorithm`, its value is defining **how to position slides by default** (if not positionned in another way). Its possible values are: `inspiral` (default), `outspiral`, and side to side like `bottomtoprightleft` and `leftrightbottomtop` (from left to right and bottom to top).
-
-To make it clear, this is how `inspiral` is positionning the slides:
-    
-    -----------------<
-    |
-    | ------------<- |
-    | |              |
-    | |   <-------   |
-    | |           |  |
-    | |--------<--   ^
-    |________________|
-    
-An exemple to avoid misunderstanding.
-    
-    <script>
-    	$(document).ready(function() {
-	        $(document).chillin({
-	            layoutAlgorithm: 'outspiral'
-	        });
-        	impress().init();
-    	});
-    </script>
-    
-Other options interesting options are:
-
-* gridCellWidth (default 2500), gridCellHeight (default 2500) that define the size of the layout cells, increase this ones if you see some empty cell
-* gridXMinLimit (default -10), gridXMaxLimit (default 10), gridYMinLimit (default -10), gridYMaxLimit (default 10): define the maximum size of the grid, if you have a lot of content you might want to increase this
-* diveZDelta (default -500), diveScaleFactor (default 0.1), that configure the dive effect impact on respectively data-z and data-scale.
-
 ### Then a simple slide
 A slide you don't want to position manually:
 
@@ -111,6 +79,39 @@ Positionning the overview slide is also a difficult thing, don't worry, Chillin.
     <div class="step" data-style="overview">
     </div>
     
+### Chillin options
+
+The most interesting option that can be pass to chillin might be `layoutAlgorithm`, its value is defining **how to position slides by default** (if not positionned in another way). Its possible values are: `inspiral` (default), `outspiral`, and side to side like `bottomtoprightleft` and `leftrightbottomtop` (from left to right and bottom to top).
+
+To make it clear, this is how `inspiral` is positionning the slides:
+    
+    -----------------<
+    |
+    | ------------<- |
+    | |              |
+    | |   <-------   |
+    | |           |  |
+    | |--------<--   ^
+    |________________|
+    
+An exemple to avoid misunderstanding:
+    
+    <script>
+    	$(document).ready(function() {
+	        $(document).chillin({
+	            layoutAlgorithm: 'outspiral'
+	        });
+        	impress().init();
+    	});
+    </script>
+    
+Other options interesting options are:
+
+* gridCellWidth (default 2500), gridCellHeight (default 2500) that define the size of the layout cells, increase this ones if you see some empty cell
+* gridXMinLimit (default -10), gridXMaxLimit (default 10), gridYMinLimit (default -10), gridYMaxLimit (default 10): define the maximum size of the grid, if you have a lot of content you might want to increase this
+* diveZDelta (default -500), diveScaleFactor (default 0.1), that configure the dive effect impact on respectively data-z and data-scale.
+
+    
 ### Troubleshooting
 
 If one of your combined slides zone is too big (many slide position relatively to one another) **you can break the global layout by consuming grid cells you shouldn't**. The solution is to work with larger grid cells.
@@ -123,6 +124,6 @@ If one of your combined slides zone is too big (many slide position relatively t
 License
 -------
 
-Copyright 2013 Fräntz Miccoli
+Copyright © 2013 Fräntz Miccoli
 
-Released under the MIT
+Released under the MIT License
