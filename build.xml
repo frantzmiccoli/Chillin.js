@@ -1,0 +1,26 @@
+<project name="Chillin.js" default="build" basedir=".">
+    
+    <property name="dir.build" value="bin" />
+    
+    <filelist id="source.list" dir="src">
+       <file name="engine.js"/>
+       <file name="layout/neighbourhooditeration.js" />
+       <file name="layout/outspiral.js" />
+       <file name="layout/inspiral.js" />
+       <file name="layout/sidetoside.js" />
+    </filelist>
+    
+    <target name="build">
+        <concat destfile="${dir.build}/chillin.js" fixlastline="true">
+            <filelist refid="source.list" />
+        </concat>
+    </target>
+    
+    <target name="jshint">
+        <apply executable="jshint">
+            <arg value="--config=jshint.config" />
+            <filelist refid="source.list" />
+        </apply>
+        
+    </target>
+</project>
