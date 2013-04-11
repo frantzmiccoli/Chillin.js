@@ -1,5 +1,5 @@
 ;(function() {
-    /*global $, document, deepEqual, test */
+    /*global $, document, deepEqual, test, ok */
     "use strict";
     
     function ChillinTest() {
@@ -86,9 +86,11 @@
                     differentPosition = (xElement1 !== xElement2)
                                         || (yElement1 !== yElement2);
                 
-                ok(differentPosition, "Element whose positionning is left to chillin should have different coordinates");
+                ok(differentPosition, "Element whose positionning is left to "+
+                                        " Chillin should have different "+
+                                        "coordinates");
                 
-                var referenceElement = $("#no-position-1"), 
+                var referenceElement = $("#no-position-2"),
                     diveElement = $("#dive-position"),
                     sameDivePositionXY = (referenceElement.attr("data-x") ===
                                             diveElement.attr("data-x"))
@@ -96,7 +98,7 @@
                                             (referenceElement.attr("data-y") ===
                                                 diveElement.attr("data-y"));
                                                 
-                ok(differentPosition, "Dive should preserve x and y");
+                ok(sameDivePositionXY, "Dive should preserve x and y");
                 
                 var differentZ = (referenceElement.attr("data-z") !==
                                             diveElement.attr("data-z"));
@@ -115,15 +117,18 @@
                                                 
                 ok(sameBackPositionXY, "Back should preserve x and y");
                 
-                var refPostionElement1 = $("#ref-previous-position"),
-                    sameY = backElement.attr("data-y") === refPostionElement1.attr("data-y");
+                var refPositionElement1 = $("#ref-previous-position"),
+                    sameY = backElement.attr("data-y")
+                                === refPositionElement1.attr("data-y");
                     
-                ok(sameY, "The reference positionned element should have the same y as the reference");    
+                ok(sameY, "The reference positionned element should have "+
+                                "the same y as the reference");
                     
-                var deltaX200 = (refPostionElement1.attr("data-x") - backElement.attr("data-x"))
+                var deltaX200 = (refPositionElement1.attr("data-x") - backElement.attr("data-x"))
                                     === 200;
                 
-                ok(deltaX200, "The reference positionned element should have a difference of 200 with previous element x");
+                ok(deltaX200, "The reference positionned element should have "+
+                                "a difference of 200 with previous element x");
                 
                 var refPositionElement2 = $("#ref-no-position-1-position"),
                     sameX = element1.attr("data-x") === refPositionElement2.attr("data-x");
@@ -132,9 +137,24 @@
                 
                 var deltaRotate90 = (refPositionElement2.attr("data-rotate") - 0) === 90;
                 
-                console.log(refPositionElement2.attr("data-rotate"), element1.attr("data-rotate"));
-                
                 ok(deltaRotate90, "The difference of rotate should be 90");
+                
+                referenceElement = $("#ref-no-position-1-position");
+                var samePositionElement = $("#same-position");
+                sameX = referenceElement.attr("data-x") ===
+                                samePositionElement.attr("data-x");
+                sameY = referenceElement.attr("data-y") ===
+                                samePositionElement.attr("data-y");
+                var samePosition = sameX && sameY;
+                                
+                ok(samePosition, "The position should be the same as the previous one");
+                
+                var refWithNoFormula = $("#ref-with-no-formula");
+                sameX = element2.attr("data-x") === refWithNoFormula.attr("data-x"),
+                sameY = element2.attr("data-y") === refWithNoFormula.attr("data-y"),
+                samePosition = sameX && sameY;
+                    
+                ok(samePosition , "The position should be the same as the reference");
             });
         };
         

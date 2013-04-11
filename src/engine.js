@@ -251,18 +251,18 @@
                 position = this._getBackPosition(backParsed[1]);
             }
             
-            var refRe = this._refRe,
-                refParsed = refRe.exec(style);
             if (style === "same") {
-                position = this._getSamePosition(refParsed);
+                position = this._getSamePosition();
             }
             
             if (style === "overview") {
                 position = this._getOverviewPosition();
             }
             
-            var formulas = this._getFormulas(stepElement);
-            if (Object.keys(formulas).length > 0) {
+            var formulas = this._getFormulas(stepElement),
+                refRe = this._refRe,
+                refParsed = refRe.exec(style);
+            if (Object.keys(formulas).length > 0 || (refParsed !== null)) {
                 position = this._getRelativePosition(formulas, refParsed);
             }
             
@@ -349,6 +349,7 @@
                 position = $.extend({},
                                     this._defaultsPositionData,
                                     referencePosition);
+
             for (var field in formulas) {
                 var formula = formulas[field],
                     newValue = this._applyFormula(formula, position[field]);
@@ -540,7 +541,7 @@
          * @return {Object}
          */
         _getReferencePosition: function(refParsed) {
-            if (refParsed === null) {
+            if (refParsed === null || typeof(refParsed) === "undefined") {
                 return this._getPredecessorPosition();
             }
             var referenceId = refParsed[1],

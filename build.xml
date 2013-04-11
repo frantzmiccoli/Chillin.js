@@ -10,6 +10,10 @@
        <file name="layout/sidetoside.js" />
     </filelist>
     
+    <filelist id="tests.list" dir="tests">
+       <file name="tests.js" /> 
+    </filelist>
+    
     <target name="build">
         <concat destfile="${dir.build}/chillin.js" fixlastline="true">
             <filelist refid="source.list" />
@@ -22,5 +26,9 @@
             <filelist refid="source.list" />
         </apply>
         
+        <apply executable="jshint">
+            <arg value="--config=jshint.config" />
+            <filelist refid="tests.list" />
+        </apply>
     </target>
 </project>
