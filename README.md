@@ -97,13 +97,18 @@ You want to keep the same position?
 ### Dive effect
 If you want to make a `dive` effect on a slide:
 
+    <div class="step">
+        <p>Reference slide to dive from</p>
+    </div>
+
     <div class="step" data-style="dive">
         <p>...</p>
     </div>
     
     <div class="step" data-style="back">
-        <!-- we leave this one empty to go back on a previous position -->
+        <!-- we leave this one empty to go back on a previous position -->        
     </div>
+    
     
 ### Overview
 Positionning the overview slide is also a difficult thing, don't worry, Chillin.js handles it to.
