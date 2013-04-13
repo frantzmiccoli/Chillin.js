@@ -262,7 +262,7 @@
             var formulas = this._getFormulas(stepElement),
                 refRe = this._refRe,
                 refParsed = refRe.exec(style);
-            if (Object.keys(formulas).length > 0 || (refParsed !== null)) {
+            if (Object.keys(formulas).length > 0 || (refParsed !== null)) {
                 position = this._getRelativePosition(formulas, refParsed);
             }
             
@@ -541,7 +541,7 @@
          * @return {Object}
          */
         _getReferencePosition: function(refParsed) {
-            if (refParsed === null || typeof(refParsed) === "undefined") {
+            if (refParsed === null || typeof(refParsed) === "undefined") {
                 return this._getPredecessorPosition();
             }
             var referenceId = refParsed[1],
@@ -648,7 +648,7 @@
          */
         _hasValidStyle: function(stepElement) {
             var style = stepElement.attr("data-style");
-            if (style === "same" ||
+            if (style === "same" ||
                 style === "overview" ||
                 this._refRe.exec(style) ||
                 this._backRe.exec(style) ||
@@ -704,7 +704,7 @@
         }
         var algorithm;
         if (options === "addLayoutAlgorithm") {
-            if (!("name" in extra) || !("algorithm" in extra)) {
+            if (!("name" in extra) || !("algorithm" in extra)) {
                 throw "'name' and 'algorithm' should be defined";
             }
             var name = extra.name;
@@ -717,8 +717,8 @@
             return;
         }
         if (options === "generateGridPositions") {
-            if (!("algorithm" in extra) || !("xMinLimit" in extra)
-                || !("xMaxLimit" in extra) || !("yMinLimit" in extra)
+            if (!("algorithm" in extra) || !("xMinLimit" in extra)
+                || !("xMaxLimit" in extra) || !("yMinLimit" in extra)
                 || !("yMaxLimit" in extra)) {
                 throw "Missing value for generating grid positions";
             }
