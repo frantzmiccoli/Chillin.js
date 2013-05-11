@@ -12,8 +12,8 @@ impress.js is a powerful way to convey ideas, nevertheless it can be a bit chall
 
 For example, you can use impress.js to do impressive "combined" slides where you switch to an element of only one view at each slide. This is awesome, but two cases may occure:
 
-* You may want to have two (or more) **sets of "combined" slides**, independent one from another
-* You may want to keep the basic-and-old-school "one slide per slide", to make it more clear: **one visible content per slide**
+* You may want to have two (or more) **sets of "combined" slides**, independent one from another.
+* You may want to keep the basic-and-old-school "one slide per slide", to make it more clear: **one visible content per slide**.
 
 In those two cases editing one single slide position may force you to update your whole presentation.
 
@@ -23,7 +23,7 @@ How to use it?
 --------------
 
 ### Simple setup
-First you need to include `chillin.js` (the one in `bin`) and call it before calling impress.js.
+First you need to include `chillin.js` (the one in `bin`) and call it before calling impress.js. Like with impress.js, **those scripts should be right before the end of the page, before your `</body>`**.
 
     <script src="./lib/jquery-1.9.1.min.js"></script>
     <script src="./lib/impress.js"></script>

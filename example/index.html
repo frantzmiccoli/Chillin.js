@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chillin.js example</title>
+
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            font-size: 4em;
+        }
+
+        p {
+            text-align: justify;
+            text-justify: newspaper;
+        }
+
+        .emphasis {
+            font-weight: bold;
+        }
+
+        .step {
+            width: 1024px;
+            height: 768px;
+        }
+
+        .focus-only, .past-only {
+            -moz-transition: opacity 1s ease-in-out 0s;
+            -o-transition: opacity 1s ease-in-out 0s;
+            -webkit-transition: opacity 1s ease-in-out 0s;
+            transition: opacity 1s ease-in-out 1s;
+
+            opacity: 0.0;
+        }
+
+        .active .focus-only{
+            opacity: 1.0;
+        }
+
+        .past .past-only{
+            opacity: 1.0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="impress" class="impress-not-supported">
+        <div id="step-1" class="step">
+            <h1>Hello</h1>
+            <p>This is just an example about <span class="emphasis">Chillin.js</span>, a layout engine on top of impress.js.</p>
+        </div>
+
+        <div class="step">
+            <p>Chillin.js is based on impress.js.</p>
+
+            <p class="focus-only">And doesn't let you do more things, it just makes things <span class="emphasis">easier</span>.</p>
+
+            <p>You can see on <a href="http://bartaz.github.io/impress.js/#/bored" target="_blank">impress.js' page</a> for its neat demo.</p>
+        </div>
+
+        <div class="step">
+            <h3>Default layout</h3>
+
+            <p>Every slides you see until this one have been automatically positionned</p>
+        </div>
+
+        <div class="step" data-style="same">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="focus-only past-only">
+                But you can still build complex things.
+            </div>
+        </div>
+
+        <div class="step" data-y="%+450">
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="focus-only">
+                <p>But you've to write this complex positioning only when you need it...</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <p>Whenever you don't need anything, you just <span class="emphasis">don't write it</span> and focus on your content.</p>
+        </div>
+
+        <div class="step">
+            <p>That's all.</p>
+
+            <p>Giving you <span class="emphasis">a layout when you need it</span> ... </p>
+
+            <p>... and some helpers for your positioning; letting you <span class="emphasis">refer to any previous element</span>.</p>
+        </div>
+
+        <div class="step" data-style="ref-step-1">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p class="focus-only past-only">Learn more on <a href="https://github.com/frantzmiccoli/Chillin.js" target="_blank">Chillin.js' project page</a>.</p>
+        </div>
+
+        <div id="overview" class="step" data-style="overview"></div>
+    </div>
+
+    <script src="../lib/impress.js"></script>
+    <script src="../lib/jquery-1.9.1.min.js"></script>
+    <script src="../bin/chillin.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).chillin();
+            impress().init();
+        });
+    </script>
+
+</body>
+</html>
