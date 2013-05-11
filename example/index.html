@@ -45,11 +45,13 @@
 
     <div id="impress" class="impress-not-supported">
         <div id="step-1" class="step">
+            <!-- This step has no position -->
             <h1>Hello</h1>
             <p>This is just an example about <span class="emphasis">Chillin.js</span>, a layout engine on top of impress.js.</p>
         </div>
 
         <div class="step">
+            <!-- still nothing, then you write nothing -->
             <p>Chillin.js is based on impress.js.</p>
 
             <p class="focus-only">And doesn't let you do more things, it just makes things <span class="emphasis">easier</span>.</p>
@@ -58,12 +60,14 @@
         </div>
 
         <div class="step">
+            <!-- still nothing -->
             <h3>Default layout</h3>
 
             <p>Every slides you see until this one have been automatically positionned</p>
         </div>
 
         <div class="step" data-style="same">
+            <!-- We're just making a slide on top of the previous one -->
             <br />
             <br />
             <br />
@@ -78,6 +82,7 @@
         </div>
 
         <div class="step" data-y="%+450">
+            <!-- We position this one according to its predecessor -->
             <br />
             <br />
             <br />
@@ -100,6 +105,7 @@
         </div>
 
         <div class="step" data-style="ref-step-1">
+            <!-- This slide goes back to the one whose id is "step-1" -->
             <br />
             <br />
             <br />

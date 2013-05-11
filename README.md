@@ -23,7 +23,7 @@ How to use it?
 --------------
 
 ### Simple setup
-First you need to include `chillin.js` (the one in `bin`) and call it before calling impress.js. Like with impress.js, **those scripts should be right before the end of the page, before your `</body>`**.
+First you need to include `chillin.js` (the one in `bin`) and call it before calling impress.js. Like with impress.js, **those scripts should be right before the end of the page, before `</body>`**.
 
     <script src="./lib/jquery-1.9.1.min.js"></script>
     <script src="./lib/impress.js"></script>
