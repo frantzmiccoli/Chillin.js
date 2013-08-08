@@ -47,7 +47,7 @@ To make it clear, this is how `inspiral` is positionning the slides:
     | |              |
     | |   <-------   |
     | |           |  |
-    | |--------<--   ^
+    | |-------->--   ^
     |________________|
     
 An exemple to avoid misunderstanding.
