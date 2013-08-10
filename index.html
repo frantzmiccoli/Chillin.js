@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Chilling.js - A layout engine on top of impress.js</title>
+    <meta name="description" content="Chillin.js provides a convenient way to position slides inside an impress.js presentation. It has two requirements: jQuery and impress.js (currently works with jQuery 1.9.1 and impress.js 0.5.3).">
+
+    <meta name="viewport" content="width=1024, initial-scale=1">
+
+
+    <link href='http://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet/less" type="text/css" href="./styles.less" />
+    <script type="text/javascript">
+        var less = {
+            env: "production", // or "production"
+            async: true,       // load imports async
+            fileAsync: false,   // load imports async when in a page under
+            // a file protocol
+            poll: 3000,         // when in watch mode, time in ms between polls
+            functions: {},      // user functions, keyed by name
+            dumpLineNumbers: "all", // or "mediaQuery" or "all"
+            relativeUrls: false// whether to adjust url's to be relative
+        };
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.4.1/less.min.js"></script>
+
+    <link href="http://alexgorbatchev.com/pub/sh/3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="http://alexgorbatchev.com/pub/sh/3.0.83/styles/shThemeRDark.css" rel="stylesheet" type="text/css" />
+    <script src="http://alexgorbatchev.com/pub/sh/3.0.83/scripts/shCore.js" type="text/javascript"></script>
+    <script src="http://alexgorbatchev.com/pub/sh/3.0.83/scripts/shBrushXml.js" type="text/javascript"></script>
+
+</head>
+<body class="impress-not-supported">
+
+    <div id="impress">
+        <div id="title-step" class="step">
+            <h1 class="main-title">Chillin.js</h1>
+
+            <p class="present-only center">&lt; Use arrows to navigate &gt;</p>
+            <br />
+        </div>
+
+        <div id="moto-step" class="step present-only past-only" data-y='%+100'>
+            <br />
+            <br />
+            <br />
+            <br />
+            <p class="center bold">is about making <a href="http://bartaz.github.io/impress.js" target="_blank">impress.js</a> more convenient</p>
+        </div>
+
+        <div id="impress-step" class="step">
+            <p>We all agree on</p>
+            <p><span class="big">impress</span><span class="complement-top">.js</span></p>
+            <br />
+            <br />
+            <br />
+        </div>
+
+        <div id="impressive-step" class="step present-only past-only" data-style="same">
+            <p class="extra-label">, it's</p>
+            <p><span class="big never">impress</span><span class="complement-bottom">ive</span></p>
+            <br />
+            <br />
+            <br />
+        </div>
+
+        <div id="but-step" class="step present-only past-only" data-style="same">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p id="but-title" class="important-title">but ... </p>
+        </div>
+
+        <div id="why-step" class="step present-only past-only" data-style="ref-impress-step"
+             data-x="%+530" data-y="%+450" >
+            <br/>
+            <br/>
+            <ol>
+                <li><span class="emphasis">Relative positioning is</span> more <span class="emphasis">convenient</span> than absolute positioning</li>
+                <li><span class="emphasis">Positioning is sometimes</span> just <span class="emphasis">useless</span> and verbose</li>
+            </ol>
+        </div>
+
+        <div id="example-0-1-step" class="step">
+            <h4>Before everything: basic setup</h4>
+            <p class="code-label">Basic setup: pure impress.js</p>
+            <div class="code-wrapper">
+                <pre class="code, brush: xml">
+                &lt;div id="impress">
+                    &lt;div id="impress-step-1" class="step" data-x="-1000" data-y="-1500">
+                        &lt;!-- What's here doesn't really matter -->
+                    &lt;/div> &lt;!-- ... -->
+                &lt;/div>
+                &lt;script type="text/javascript" src="lib/impress.js">&lt;/script>
+                &lt;script type="text/javascript">
+                    impress().init();
+                &lt;/script>
+                </pre>
+            </div>
+        </div>
+
+        <div id="example-0-2-step" class="step">
+            <h4>Before everything: basic setup</h4>
+            <p class="code-label">Basic setup: pure impress.js</p>
+            <div class="code-wrapper">
+                    <pre class="code, brush: xml">
+                    &lt;div id="impress">
+                    &lt;div id="impress-step-1" class="step" data-x="-1000" data-y="-1500">
+                    &lt;!-- What's here doesn't really matter -->
+                    &lt;/div> &lt;!-- ... -->
+                    &lt;/div>
+                    &lt;script type="text/javascript" src="lib/impress.js">&lt/script>
+                    &lt;script type="text/javascript" src="lib/jquery-1.9.1/jquery.min.js">&lt;/script>
+                    &lt;script type="text/javascript" src="lib/chillin.js">&lt;/script>
+                    &lt;script type="text/javascript">
+                        $(document).ready(function() {
+                            $(document).chillin();
+                            impress().init();
+                        });
+                    &lt;/script>
+            </pre>
+            </div>
+        </div>
+
+        <div id="example-1-step" class="step">
+            <h4>Relative positioning</h4>
+            <p class="code-label">Close positioning: pure impress.js</p>
+            <div class="code-wrapper">
+                <pre class="code, brush: xml">
+                    &lt;div id="impress-step-1" class="step" data-x="-1000" data-y="-1500">
+                        &lt;!-- What's here doesn't really matter -->
+                    &lt;/div>
+                    &lt;div id="impress-step-2" class="step" data-x="-1000" data-y="-1200">
+                        &lt;!--
+                            This content is 300 below the previous one, right ?
+                        -->
+                    &lt;/div>
+                </pre>
+            </div>
+
+            <p class="code-label">Close positioning: impress.js + Chillin.js</p>
+            <div class="code-wrapper">
+                <pre class="code, brush: xml">
+                    &lt;div id="impress-step-1" class="step">
+                        &lt;!-- What's here doesn't really matter either -->
+                    &lt;/div>
+                    &lt;div id="impress-step-2" class="step" data-y="%+300">
+                        &lt;!-- Note that when you want to move slides to reorganize
+                                everything a such behavior is really helpful ! -->
+                    &lt;/div>
+                </pre>
+            </div>
+        </div>
+
+        <div id="example-2-step" class="step">
+            <h4>No positioning</h4>
+            <p class="code-label">No positioning: pure impress.js (not possible)</p>
+            <div class="code-wrapper">
+                <pre class="code, brush: xml">
+                    &lt;div id="impress-step-1" class="step" data-x="-1000" data-y="-1500">
+                        &lt;!-- What's here doesn't really matter -->
+                    &lt;/div>
+                    &lt;div id="impress-step-2" class="step" data-x="2000" data-y="2000">
+                        &lt;!-- This content is just far away from the first one -->
+                    &lt;/div>
+                </pre>
+            </div>
+
+            <p class="code-label">No positioning: impress.js + Chillin.js</p>
+            <div class="code-wrapper">
+                <pre class="code, brush: xml">
+                    &lt;div id="impress-step-1" class="step">
+                        &lt;!-- What's here doesn't really matter either -->
+                    &lt;/div>
+                    &lt;div id="impress-step-2" class="step">
+                        &lt;!-- If you just don't care ... just say nothing! -->
+                    &lt;/div>
+                </pre>
+            </div>
+        </div>
+
+        <div id="more-step" class="step">
+            <p class="less-important-title">More about Chillin.js</p>
+            <p>There are others features: like diving effect, or referring
+                to an old slide for the relative positioning.</p>
+            <p>For more information, see the
+                <a href="https://github.com/frantzmiccoli/Chillin.js">README.md</a>
+                on GitHub.</p>
+
+            <p class="credits">Read the source of the page and the
+                <a href="styles.less">LESS stylesheet </a> to get more
+                informations on the credits and used work.</p>
+        </div>
+
+        <div id="overview" class="step" data-style="overview">
+
+        </div>
+    </div>
+
+    <div class="fallback-message">
+        <p>Your browser doesn't support the features required by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>You may not be informed about "Why does having a recent browser is important ?".</p>
+        <p>Now at least, you know that you can't see content like this site.</p>
+        <p>We suggest you to go there : <a href="http://browsehappy.com/" target="_blank">browsehappy.com</a></p>
+    </div>
+
+    <script type="text/javascript" src="lib/impress.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/chillin.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(document).chillin({
+                layoutAlgorithm: 'outspiral'
+            });
+            impress().init();
+
+            // linked with syntax highlighter rather than Chillin.js
+            SyntaxHighlighter.all();
+        });
+    </script>
+
+</body>
+</html>

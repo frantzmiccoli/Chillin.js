@@ -1,0 +1,193 @@
+@import "lib/lesshat.less";
+
+// THEME
+// From http://www.colourlovers.com/palette/148712/Gamebookers
+@font-color: #424242;
+@link-color: #3299BB;
+@emphasis: #FF9900;
+
+// GENERIC IMPRESS
+.fallback-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1em;
+}
+
+.impress-not-supported {
+  #impress {
+    opacity: 0;
+  }
+  .fallback-message {
+    opacity: 1.0;
+  }
+}
+
+.impress-supported .fallback-message {
+  opacity: 0;
+}
+
+// COMMON EFFECTS AND STYLES
+.never {
+  opacity: 0;
+}
+
+.present-only, .past-only, .future-only {
+  opacity: 0;
+}
+
+.present {
+  &.present-only, .present-only {
+    opacity: 1.0;
+  }
+}
+
+.past {
+  &.past-only, .past-only {
+    opacity: 1.0;
+  }
+}
+
+.future {
+  &.future-only, .future-only {
+    opacity: 1.0;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.step {
+  font-size: 3em;
+
+  width: 1024px;
+}
+
+.big {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.emphasis {
+  color: @emphasis;
+}
+
+.code-wrapper {
+  font-size: 0.4em;
+}
+
+.code-label{
+  margin-bottom: 0;
+}
+
+// STYLE
+
+body, div, p, span {
+  .transition(~"all 0.5s ease-in");
+}
+
+body {
+
+// From http://subtlepatterns.com/subtle-grunge/
+  background-image: url(img/subtle_grunge_@2X.png);
+
+  color: @font-color;
+  font-family: sans-serif;
+}
+
+// Handling @2X
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+  body {
+    background-image:url(img/subtle_grunge_@2X.png);
+  }
+}
+
+a {
+  color: @link-color;
+}
+
+.three-d(@color: @emphasis) {
+  color: @color;
+  text-shadow: 0px 1px 0px darken(@color, 10%),
+               0px 2px 0px darken(@color, 22%),
+               0px 3px 0px darken(@color, 35%),
+               0px 4px 0px darken(@color, 46%),
+               0px 5px 0px darken(@color, 57%),
+               0px 6px 0px darken(@color, 68%),
+               0px 7px 0px darken(@color, 79%),
+               0px 8px 7px darken(@color, 90%);
+}
+
+.main-title {
+  .center;
+  .three-d;
+  font-family: 'Yesteryear', cursive;
+  font-size: 5em;
+
+  margin-bottom: 0.1em;
+}
+
+.important-title {
+  .center;
+  .three-d;
+  font-family: 'Yesteryear', cursive;
+  font-size: 3.5em;
+
+  margin-bottom: 0.1em;
+}
+
+.less-important-title {
+  .important-title;
+  font-size: 2.5em;
+}
+
+#impress-step, #impressive-step {
+  .complement-bottom, .complement-top, .extra-label {
+    position: relative;
+  }
+  .complement-bottom, .complement-top {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-left: 0.23em;
+  }
+  .complement-top {
+    top: -1.1em;
+
+  }
+  .complement-bottom {
+    .emphasis;
+
+
+  }
+  .extra-label {
+    .emphasis;
+    padding-left: 7em;
+
+  }
+}
+
+#but-title {
+  position:relative;
+  left: 1em;
+}
+
+#why-step {
+  ol > li {
+    margin: 0em 0em 2em 4em;
+  }
+}
+
+.credits {
+  position: lreative;
+  float: right;
+  font-size: 0.3em;
+  width: 50%;
+}
