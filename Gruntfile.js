@@ -1,5 +1,7 @@
 /* This file is used to let Travis run QUnit tests */
 module.exports = function(grunt) {
+    grunt.loadNpmTasks('grunt-contrib-qunit');
+
     // Project configuration.
     grunt.initConfig({
         qunit: {
