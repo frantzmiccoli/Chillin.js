@@ -35,7 +35,7 @@ First you need to include `chillin.js` (the one in `bin`) and call it before cal
     	});
     </script>
     
-### Chillin options
+### Chillin.js options
 
 The most interesting option that can be pass to chillin might be `layoutAlgorithm`, its value is defining **how to position slides by default** (if not positionned in another way). Its possible values are: `inspiral` (default), `outspiral`, and side to side like `bottomtoprightleft` and `leftrightbottomtop` (from left to right and bottom to top).
 
@@ -50,7 +50,7 @@ To make it clear, this is how `inspiral` is positionning the slides:
     | |-------->--   ^
     |________________|
     
-An exemple to avoid misunderstanding.
+An example to avoid misunderstanding:
     
     <script>
     	$(document).ready(function() {
