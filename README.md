@@ -1,5 +1,8 @@
+[![Build Status](https://secure.travis-ci.org/frantzmiccoli/Chillin.js.png)](http://travis-ci.org/frantzmiccoli/Chillin.js)
+
 Chillin.js
 ==========
+
 A layout engine on top of [impress.js](http://bartaz.github.io/impress.js/ "impress.js").
 
 The global idea
