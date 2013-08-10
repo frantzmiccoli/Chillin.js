@@ -1,5 +1,9 @@
 {
   "name": "Chillin.js",
+  "repository" :
+  { "type" : "git",
+    "url" : "http://github.com/frantzmiccoli/Chillin.js.git"
+  }
   "version": "1.0.0",
   "devDependencies": {
     "grunt": "~0.4.1",
