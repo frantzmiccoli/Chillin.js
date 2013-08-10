@@ -5,6 +5,8 @@ Chillin.js
 
 A layout engine on top of [impress.js](http://bartaz.github.io/impress.js/ "impress.js").
 
+A quick demo is available: [Chillin.js](http://frantzmiccoli.github.io/Chillin.js "Chillin.js").
+
 The global idea
 ---------------
 Chillin.js provides a convenient way to position slides inside an impress.js presentation. It has two requirements: jQuery and impress.js (currently works with jQuery 1.9.1 and impress.js 0.5.3).
