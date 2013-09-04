@@ -135,4 +135,4 @@ License
 
 Copyright 2013 Fräntz Miccoli
 
-Released under the MIT
+Released under the MIT License.
