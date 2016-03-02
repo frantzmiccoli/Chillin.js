@@ -68,7 +68,7 @@ An example to avoid misunderstanding:
     
 Other options interesting options are:
 
-* gridCellWidth (default 2500), gridCellHeight (default 2500) that define the size of the layout cells, increase this ones if you see some empty cell
+* gridCellWidth (default 2500), gridCellHeight (default 2500) that define the size of the layout cells, increase these ones if you see some empty cell
 * gridXMinLimit (default -10), gridXMaxLimit (default 10), gridYMinLimit (default -10), gridYMaxLimit (default 10): define the maximum size of the grid, if you have a lot of content you might want to increase this
 * diveZDelta (default -500), diveScaleFactor (default 0.1), that configure the dive effect impact on respectively data-z and data-scale.
 
