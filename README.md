@@ -116,7 +116,7 @@ If you want to make a `dive` effect on a slide:
     
     
 ### Overview
-Positionning the overview slide is also a difficult thing, don't worry, Chillin.js handles it to.
+Positionning the overview slide is also a difficult thing, don't worry, Chillin.js handles it too.
 
     <div class="step" data-style="overview">
     </div>
