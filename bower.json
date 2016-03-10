@@ -1,0 +1,21 @@
+{
+  "name": "Chillin.js",
+  "description": "A layout engine for impress.js",
+  "main": "dist/chillin.js",
+  "authors": [
+    "Fräntz Miccoli <frantz.miccoli@fakedomain.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "impress"
+  ],
+  "homepage": "https://github.com/frantzmiccoli/Chillin.js",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
