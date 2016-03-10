@@ -1,6 +1,6 @@
 <project name="Chillin.js" default="build" basedir=".">
     
-    <property name="dir.build" value="bin" />
+    <property name="dir.build" value="dist" />
     
     <filelist id="source.list" dir="src">
        <file name="engine.js"/>
@@ -21,14 +21,20 @@
     </target>
     
     <target name="jshint">
-        <apply executable="jshint">
+        <apply executable="./node_modules/.bin/jshint">
             <arg value="--config=jshint.config" />
             <filelist refid="source.list" />
         </apply>
         
-        <apply executable="jshint">
+        <apply executable="./node_modules/.bin/jshint">
             <arg value="--config=jshint.config" />
             <filelist refid="tests.list" />
         </apply>
+    </target>
+
+    <target name="test">
+        <exec executable="./node_modules/.bin/grunt">
+            <arg value="test" />
+        </exec>
     </target>
 </project>

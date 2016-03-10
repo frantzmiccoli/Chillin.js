@@ -68,7 +68,7 @@
                                         {x: 0, y:-1},
                                         {x: 0, y:0},
                                         {x: 0, y:1},
-                                        {x: -1, y:1}],
+                                        {x: -1, y:1}];
                 positions = layout(-10, 10, -50, 50, 7).slice(0, 7);
                     
                 deepEqual(positions, expectedPositions, "Positions should match");
@@ -150,8 +150,8 @@
                 ok(samePosition, "The position should be the same as the previous one");
                 
                 var refWithNoFormula = $("#ref-with-no-formula");
-                sameX = element2.attr("data-x") === refWithNoFormula.attr("data-x"),
-                sameY = element2.attr("data-y") === refWithNoFormula.attr("data-y"),
+                sameX = element2.attr("data-x") === refWithNoFormula.attr("data-x");
+                sameY = element2.attr("data-y") === refWithNoFormula.attr("data-y");
                 samePosition = sameX && sameY;
                     
                 ok(samePosition , "The position should be the same as the reference");
